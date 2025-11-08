@@ -211,6 +211,23 @@ code {
     transform: translateX(-50%) scaleX(1);
 }
 
+.nav-link.external-link {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 2rem;
+}
+
+.nav-link.external-link::after {
+    display: none;
+}
+
+.nav-link.external-link:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
