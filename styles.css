@@ -630,21 +630,52 @@ code {
 
 /* Custom scrollbar for formula boxes */
 .formula-box::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
 }
 
 .formula-box::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .formula-box::-webkit-scrollbar-thumb {
     background: var(--primary-color);
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .formula-box::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
+}
+
+/* Scrollable indicator for mobile */
+@media (max-width: 768px) {
+    .formula-box {
+        position: relative;
+    }
+    
+    .formula-box::after {
+        content: '⟶';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary-color);
+        opacity: 0.5;
+        font-size: 1.2rem;
+        pointer-events: none;
+        animation: slideHint 2s ease-in-out infinite;
+    }
+}
+
+@keyframes slideHint {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-50%) translateX(5px);
+        opacity: 0.8;
+    }
 }
 
 /* ===================================
