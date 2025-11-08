@@ -24,13 +24,14 @@ A comprehensive, interactive web application for learning neural networks from b
 - **Smooth Navigation** - Scroll spy with active link highlighting
 - **Animated Hero Section** - Neural network background animation
 - **Interactive Diagrams** - Hover effects on perceptron visualization
-- **3D Tilt Effects** - Cards respond to mouse movement
+- **3D Tilt Effects** - Cards respond to mouse movement (on intro cards only)
 - **Reading Progress Bar** - Track your progress through the content
 - **Back to Top Button** - Quick navigation to top
 - **Click to Copy** - Copy code formulas by clicking
 - **Keyboard Navigation** - Use arrow keys to navigate sections
 - **Animated Counters** - Statistics animate when scrolled into view
 - **Intersection Observer** - Elements animate as you scroll
+- **External Link Integration** - Quick access to Inferential Statistics tutorial
 
 ## 🛠️ Technologies Used
 
@@ -54,6 +55,7 @@ neuranet/
 1. **Clone or download** the repository
 2. **Open `index.html`** in your web browser
 3. **Start learning!** Navigate through sections using the navbar or scroll
+4. **Explore more**: Click "Statistics 📊" in the navbar to access the Inferential Statistics tutorial
 
 No build process, no dependencies - just pure HTML, CSS, and JavaScript!
 
@@ -147,6 +149,17 @@ This application is designed to:
 - Cover both theoretical and practical aspects
 - Offer best practices for real-world implementation
 
+## 🔗 Related Resources
+
+**Inferential Statistics Tutorial**: Complement your neural network knowledge with statistical foundations. Access the comprehensive [Inferential Statistics](https://prateekdutta2001.github.io/Info_Stats/) guide directly from the navigation bar.
+
+Topics covered in the Statistics tutorial:
+- Hypothesis Testing
+- Confidence Intervals
+- Statistical Tests (T-test, Z-test, ANOVA, Chi-Square)
+- Regression Analysis
+- Interactive Calculators
+
 ## 🔮 Future Enhancements (Optional)
 
 Possible additions for extended version:
@@ -165,10 +178,15 @@ Free to use for educational purposes.
 
 ## 👨‍💻 Credits
 
-Built with passion for AI education and modern web design.
+Built with passion for AI education and modern web design.  
+**Curated by**: Prateek Dutta
+
+### Connect & Explore More:
+- 📊 [Inferential Statistics Tutorial](https://prateekdutta2001.github.io/Info_Stats/)
 
 ---
 
 **Happy Learning! 🚀**
 
-Start your journey into the fascinating world of Neural Networks with NeuraNet!
+Start your journey into the fascinating world of Neural Networks with NeuraNet!  
+For statistical foundations, check out the companion [Inferential Statistics guide](https://prateekdutta2001.github.io/Info_Stats/).
