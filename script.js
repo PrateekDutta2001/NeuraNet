@@ -9,6 +9,11 @@ const sections = document.querySelectorAll('.section, .hero');
 // Smooth scroll to section
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+        // Skip smooth scroll for external links
+        if (link.classList.contains('external-link')) {
+            return;
+        }
+        
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
@@ -40,9 +45,12 @@ function updateActiveNavLink() {
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
+                // Skip external links for scroll spy
+                if (!link.classList.contains('external-link')) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
                 }
             });
         }
@@ -105,6 +113,7 @@ document.addEventListener('click', (e) => {
 // Close mobile menu when clicking a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
+        // Close mobile menu for both internal and external links
         navLinksContainer.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
     });
