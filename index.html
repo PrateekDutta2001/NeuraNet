@@ -139,7 +139,13 @@
                             <div class="formula-title">Perceptron Function</div>
                             <code>y = f(w₁x₁ + w₂x₂ + ... + wₙxₙ + b)</code>
                             <p class="formula-explanation">
-                                where: x = inputs, w = weights, b = bias, f = activation function
+                                <strong>Where:</strong><br>
+                                • y = Output (prediction/result)<br>
+                                • f = Activation function (introduces non-linearity)<br>
+                                • w₁, w₂, ..., wₙ = Weights (learnable parameters)<br>
+                                • x₁, x₂, ..., xₙ = Input features<br>
+                                • n = Number of input features<br>
+                                • b = Bias term (offset value)
                             </p>
                         </div>
                         <h4>Components:</h4>
@@ -207,6 +213,9 @@
                             <h4>Sigmoid</h4>
                             <div class="formula-box">
                                 <code>σ(x) = 1 / (1 + e⁻ˣ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> σ = Sigma (sigmoid function), x = Input value, e = Euler's number (≈2.718)
+                                </p>
                             </div>
                             <p><strong>Range:</strong> (0, 1)</p>
                             <p><strong>Use Case:</strong> Binary classification, output layer</p>
@@ -217,6 +226,9 @@
                             <h4>Tanh (Hyperbolic Tangent)</h4>
                             <div class="formula-box">
                                 <code>tanh(x) = (eˣ - e⁻ˣ) / (eˣ + e⁻ˣ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> x = Input value, e = Euler's number (≈2.718), eˣ = e raised to power x
+                                </p>
                             </div>
                             <p><strong>Range:</strong> (-1, 1)</p>
                             <p><strong>Use Case:</strong> Hidden layers in RNNs</p>
@@ -227,8 +239,11 @@
                             <h4>ReLU (Rectified Linear Unit)</h4>
                             <div class="formula-box">
                                 <code>ReLU(x) = max(0, x)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> x = Input value, max = Maximum function (returns 0 if x&lt;0, else returns x)
+                                </p>
                             </div>
-                            <p><strong>Range:</strong> [0, ∞)</p>
+                            <p><strong>Range:</strong> [0, ∞]</p>
                             <p><strong>Use Case:</strong> Most popular for hidden layers</p>
                             <p><strong>Pros:</strong> Computationally efficient, no vanishing gradient</p>
                             <p><strong>Cons:</strong> Dead neurons problem</p>
@@ -237,6 +252,9 @@
                             <h4>Leaky ReLU</h4>
                             <div class="formula-box">
                                 <code>f(x) = max(αx, x)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> x = Input value, α = Small positive constant (typically 0.01), max = Maximum function
+                                </p>
                             </div>
                             <p><strong>Range:</strong> (-∞, ∞)</p>
                             <p><strong>Use Case:</strong> Alternative to ReLU</p>
@@ -247,6 +265,9 @@
                             <h4>Softmax</h4>
                             <div class="formula-box">
                                 <code>σ(x)ᵢ = eˣⁱ / Σⱼ eˣʲ</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> σ(x)ᵢ = Softmax output for class i, xᵢ = Input for class i, e = Euler's number, Σⱼ = Sum over all classes j
+                                </p>
                             </div>
                             <p><strong>Range:</strong> (0, 1), sum = 1</p>
                             <p><strong>Use Case:</strong> Multi-class classification output</p>
@@ -257,6 +278,9 @@
                             <h4>ELU (Exponential Linear Unit)</h4>
                             <div class="formula-box">
                                 <code>f(x) = x if x > 0, α(eˣ - 1) if x ≤ 0</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> x = Input value, α = Hyperparameter (typically 1.0), e = Euler's number (≈2.718)
+                                </p>
                             </div>
                             <p><strong>Range:</strong> (-α, ∞)</p>
                             <p><strong>Use Case:</strong> Deep networks</p>
@@ -299,15 +323,16 @@
                             <p>In matrix form, the operation of a layer can be represented as:</p>
                             <div class="formula-box">
                                 <code>Y = f(W·X + B)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong><br>
+                                    • Y = Output vector (results from the layer)<br>
+                                    • f = Activation function<br>
+                                    • W = Weight matrix (learnable parameters)<br>
+                                    • X = Input vector (features)<br>
+                                    • B = Bias vector (offset terms)<br>
+                                    • · = Matrix multiplication
+                                </p>
                             </div>
-                            <p>Where:</p>
-                            <ul>
-                                <li>W = weight matrix</li>
-                                <li>X = input vector</li>
-                                <li>B = bias vector</li>
-                                <li>f = activation function</li>
-                                <li>Y = output vector</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -383,6 +408,9 @@
                                 <strong>Input Layer:</strong> Receive input data
                                 <div class="formula-box small">
                                     <code>a⁽⁰⁾ = X</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> a⁽⁰⁾ = Activation at layer 0, X = Input data
+                                    </p>
                                 </div>
                             </li>
                             <li>
@@ -390,18 +418,27 @@
                                 <div class="formula-box small">
                                     <code>z⁽ˡ⁾ = W⁽ˡ⁾·a⁽ˡ⁻¹⁾ + b⁽ˡ⁾</code>
                                     <code>a⁽ˡ⁾ = f(z⁽ˡ⁾)</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> z⁽ˡ⁾ = Pre-activation at layer l, W⁽ˡ⁾ = Weights at layer l, a⁽ˡ⁻¹⁾ = Activation from previous layer, b⁽ˡ⁾ = Bias at layer l, a⁽ˡ⁾ = Activation at layer l, f = Activation function
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <strong>Output Layer:</strong> Final prediction
                                 <div class="formula-box small">
                                     <code>ŷ = a⁽ᴸ⁾</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> ŷ = Predicted output, a⁽ᴸ⁾ = Activation at final layer L, L = Total number of layers
+                                    </p>
                                 </div>
                             </li>
                             <li>
                                 <strong>Loss Calculation:</strong> Compare prediction with actual
                                 <div class="formula-box small">
                                     <code>Loss = L(ŷ, y)</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> L = Loss function, ŷ = Predicted output, y = Actual target value
+                                    </p>
                                 </div>
                             </li>
                         </ol>
@@ -541,6 +578,9 @@
                                 <strong>Compute Output Gradient:</strong>
                                 <div class="formula-box small">
                                     <code>∂L/∂a⁽ᴸ⁾ = ∂L/∂ŷ</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> ∂L/∂a⁽ᴸ⁾ = Gradient of loss w.r.t. output activation, L = Loss, a⁽ᴸ⁾ = Output layer activation, ŷ = Prediction
+                                    </p>
                                 </div>
                             </li>
                             <li>
@@ -550,6 +590,9 @@
                                     <code>∂L/∂W⁽ˡ⁾ = ∂L/∂z⁽ˡ⁾ · (a⁽ˡ⁻¹⁾)ᵀ</code>
                                     <code>∂L/∂b⁽ˡ⁾ = ∂L/∂z⁽ˡ⁾</code>
                                     <code>∂L/∂a⁽ˡ⁻¹⁾ = (W⁽ˡ⁾)ᵀ · ∂L/∂z⁽ˡ⁾</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> ∂ = Partial derivative, L = Loss, z⁽ˡ⁾ = Pre-activation at layer l, a⁽ˡ⁾ = Activation at layer l, f' = Derivative of activation function, W⁽ˡ⁾ = Weights at layer l, b⁽ˡ⁾ = Bias at layer l, ᵀ = Transpose, · = Matrix multiplication
+                                    </p>
                                 </div>
                             </li>
                             <li>
@@ -557,6 +600,9 @@
                                 <div class="formula-box small">
                                     <code>W⁽ˡ⁾ = W⁽ˡ⁾ - α · ∂L/∂W⁽ˡ⁾</code>
                                     <code>b⁽ˡ⁾ = b⁽ˡ⁾ - α · ∂L/∂b⁽ˡ⁾</code>
+                                    <p class="formula-explanation">
+                                        <strong>Where:</strong> W⁽ˡ⁾ = Updated weights, α = Learning rate (step size), ∂L/∂W⁽ˡ⁾ = Gradient of loss w.r.t. weights, b⁽ˡ⁾ = Updated bias, ∂L/∂b⁽ˡ⁾ = Gradient of loss w.r.t. bias
+                                    </p>
                                 </div>
                             </li>
                         </ol>
@@ -564,7 +610,12 @@
                         <div class="info-box">
                             <h4>Chain Rule in Action:</h4>
                             <p>Backpropagation applies the chain rule to propagate errors from output to input:</p>
-                            <code>∂L/∂W⁽¹⁾ = ∂L/∂a⁽ᴸ⁾ · ∂a⁽ᴸ⁾/∂z⁽ᴸ⁾ · ... · ∂a⁽¹⁾/∂z⁽¹⁾ · ∂z⁽¹⁾/∂W⁽¹⁾</code>
+                            <div class="formula-box small">
+                                <code>∂L/∂W⁽¹⁾ = ∂L/∂a⁽ᴸ⁾ · ∂a⁽ᴸ⁾/∂z⁽ᴸ⁾ · ... · ∂a⁽¹⁾/∂z⁽¹⁾ · ∂z⁽¹⁾/∂W⁽¹⁾</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> Each partial derivative represents the gradient at that layer, chained together from output (L) to first layer (1) using the chain rule from calculus
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -583,6 +634,9 @@
                             <h4>Mean Squared Error (MSE)</h4>
                             <div class="formula-box">
                                 <code>MSE = (1/n) Σ(yᵢ - ŷᵢ)²</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> n = Number of samples, Σ = Sum, yᵢ = Actual value for sample i, ŷᵢ = Predicted value for sample i, ² = Squared (power of 2)
+                                </p>
                             </div>
                             <p><strong>Use Case:</strong> Regression problems</p>
                             <p><strong>Characteristics:</strong></p>
@@ -596,6 +650,9 @@
                             <h4>Binary Cross-Entropy</h4>
                             <div class="formula-box">
                                 <code>BCE = -1/n Σ[yᵢlog(ŷᵢ) + (1-yᵢ)log(1-ŷᵢ)]</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> n = Number of samples, Σ = Sum, yᵢ = Actual label (0 or 1), ŷᵢ = Predicted probability, log = Natural logarithm
+                                </p>
                             </div>
                             <p><strong>Use Case:</strong> Binary classification</p>
                             <p><strong>Characteristics:</strong></p>
@@ -609,6 +666,9 @@
                             <h4>Categorical Cross-Entropy</h4>
                             <div class="formula-box">
                                 <code>CCE = -Σᵢ Σⱼ yᵢⱼ log(ŷᵢⱼ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> Σᵢ = Sum over all samples i, Σⱼ = Sum over all classes j, yᵢⱼ = Actual label for sample i and class j (one-hot encoded), ŷᵢⱼ = Predicted probability, log = Natural logarithm
+                                </p>
                             </div>
                             <p><strong>Use Case:</strong> Multi-class classification</p>
                             <p><strong>Characteristics:</strong></p>
@@ -622,6 +682,9 @@
                             <h4>Mean Absolute Error (MAE)</h4>
                             <div class="formula-box">
                                 <code>MAE = (1/n) Σ|yᵢ - ŷᵢ|</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> n = Number of samples, Σ = Sum, yᵢ = Actual value for sample i, ŷᵢ = Predicted value for sample i, | | = Absolute value
+                                </p>
                             </div>
                             <p><strong>Use Case:</strong> Regression with outliers</p>
                             <p><strong>Characteristics:</strong></p>
@@ -648,6 +711,9 @@
                             <h4>Gradient Descent (GD)</h4>
                             <div class="formula-box">
                                 <code>θ = θ - α · ∇J(θ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> θ = Parameters (weights & biases), α = Learning rate, ∇J(θ) = Gradient of cost function J w.r.t. parameters θ, · = Multiplication
+                                </p>
                             </div>
                             <p>The basic optimization algorithm that updates weights using the gradient of the entire dataset.</p>
                             <ul class="pros-cons">
@@ -661,6 +727,9 @@
                             <h4>Stochastic Gradient Descent (SGD)</h4>
                             <div class="formula-box">
                                 <code>θ = θ - α · ∇J(θ; xᵢ, yᵢ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> θ = Parameters, α = Learning rate, ∇J(θ; xᵢ, yᵢ) = Gradient computed on single example (xᵢ, yᵢ), xᵢ = Single input sample, yᵢ = Single target value
+                                </p>
                             </div>
                             <p>Updates weights using one training example at a time, making it much faster.</p>
                             <ul class="pros-cons">
@@ -675,6 +744,9 @@
                             <h4>Mini-Batch SGD</h4>
                             <div class="formula-box">
                                 <code>θ = θ - α · ∇J(θ; Xᵇᵃᵗᶜʰ)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> θ = Parameters, α = Learning rate, ∇J(θ; Xᵇᵃᵗᶜʰ) = Gradient computed on a mini-batch, Xᵇᵃᵗᶜʰ = Small subset of training data (batch)
+                                </p>
                             </div>
                             <p>Balances GD and SGD by using small batches (typically 32-256 examples).</p>
                             <ul class="pros-cons">
@@ -688,6 +760,9 @@
                             <div class="formula-box">
                                 <code>v = βv + α·∇J(θ)</code>
                                 <code>θ = θ - v</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> v = Velocity (momentum term), β = Momentum coefficient (typically 0.9), α = Learning rate, ∇J(θ) = Gradient, θ = Parameters
+                                </p>
                             </div>
                             <p>Accumulates a velocity vector in directions of persistent gradient reduction.</p>
                             <ul class="pros-cons">
@@ -702,6 +777,9 @@
                                 <code>m = β₁m + (1-β₁)∇J(θ)</code>
                                 <code>v = β₂v + (1-β₂)(∇J(θ))²</code>
                                 <code>θ = θ - α·m/√(v+ε)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> m = First moment (mean of gradients), β₁ = First moment decay (typically 0.9), v = Second moment (variance of gradients), β₂ = Second moment decay (typically 0.999), ∇J(θ) = Gradient, θ = Parameters, α = Learning rate, √ = Square root, ε = Small constant (10⁻⁸) for numerical stability
+                                </p>
                             </div>
                             <p>Combines momentum and adaptive learning rates. Currently most popular optimizer.</p>
                             <ul class="pros-cons">
@@ -716,6 +794,9 @@
                             <div class="formula-box">
                                 <code>v = βv + (1-β)(∇J(θ))²</code>
                                 <code>θ = θ - α·∇J(θ)/√(v+ε)</code>
+                                <p class="formula-explanation">
+                                    <strong>Where:</strong> v = Moving average of squared gradients, β = Decay rate (typically 0.9), ∇J(θ) = Gradient, θ = Parameters, α = Learning rate, √ = Square root, ε = Small constant (10⁻⁸) for numerical stability
+                                </p>
                             </div>
                             <p>Adapts learning rate by dividing by exponentially decaying average of squared gradients.</p>
                             <ul class="pros-cons">
@@ -968,6 +1049,9 @@
                     </ul>
                     <div class="type-formula">
                         <code>hₜ = f(Wₕhₜ₋₁ + Wₓxₜ + b)</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> hₜ = Hidden state at time t, f = Activation function, Wₕ = Hidden-to-hidden weight matrix, hₜ₋₁ = Previous hidden state, Wₓ = Input-to-hidden weight matrix, xₜ = Input at time t, b = Bias vector
+                        </p>
                     </div>
                     <h4>Variants:</h4>
                     <ul>
@@ -1003,6 +1087,9 @@
                     </ul>
                     <div class="type-formula">
                         <code>min_G max_D V(D,G) = E[log(D(x))] + E[log(1-D(G(z)))]</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> min_G = Minimize over Generator, max_D = Maximize over Discriminator, V(D,G) = Value function, E = Expected value, D(x) = Discriminator output for real data x, G(z) = Generator output from noise z, log = Natural logarithm, z = Random noise vector
+                        </p>
                     </div>
                     <h4>Applications:</h4>
                     <ul>
@@ -1055,6 +1142,9 @@
                     </ul>
                     <div class="type-formula">
                         <code>Attention(Q,K,V) = softmax(QKᵀ/√d_k)V</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> Q = Query matrix, K = Key matrix, V = Value matrix, Kᵀ = Transpose of K, d_k = Dimension of key vectors, √ = Square root, softmax = Softmax activation function
+                        </p>
                     </div>
                     <h4>Architecture:</h4>
                     <ul>
@@ -1086,6 +1176,9 @@
                     </ul>
                     <div class="type-formula">
                         <code>φ(x) = exp(-||x - c||² / 2σ²)</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> φ(x) = RBF activation, exp = Exponential function (e to the power), x = Input vector, c = Center of RBF, || || = Euclidean norm (distance), σ = Width/spread parameter, ² = Squared
+                        </p>
                     </div>
                     <h4>Applications:</h4>
                     <ul>
@@ -1162,6 +1255,9 @@
                         <code>score(hₜ, h̄ₛ) = hₜᵀWₐh̄ₛ</code>
                         <code>αₜₛ = softmax(score(hₜ, h̄ₛ))</code>
                         <code>cₜ = Σₛ αₜₛh̄ₛ</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> hₜ = Target hidden state, h̄ₛ = Source hidden state, Wₐ = Attention weight matrix, ᵀ = Transpose, αₜₛ = Attention weight, softmax = Softmax function, cₜ = Context vector, Σₛ = Sum over all source positions
+                        </p>
                     </div>
                 </div>
 
@@ -1171,18 +1267,27 @@
                     <h4>L1 Regularization (Lasso):</h4>
                     <div class="formula-box small">
                         <code>Loss = MSE + λ Σ|wᵢ|</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> MSE = Mean Squared Error, λ = Regularization parameter, Σ = Sum, wᵢ = Weight i, | | = Absolute value
+                        </p>
                     </div>
                     <p>Promotes sparsity, feature selection</p>
                     
                     <h4>L2 Regularization (Ridge):</h4>
                     <div class="formula-box small">
                         <code>Loss = MSE + λ Σwᵢ²</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> MSE = Mean Squared Error, λ = Regularization parameter, Σ = Sum, wᵢ = Weight i, ² = Squared
+                        </p>
                     </div>
                     <p>Prevents large weights, smoother models</p>
                     
                     <h4>Elastic Net:</h4>
                     <div class="formula-box small">
                         <code>Loss = MSE + λ₁Σ|wᵢ| + λ₂Σwᵢ²</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> MSE = Mean Squared Error, λ₁ = L1 regularization parameter, λ₂ = L2 regularization parameter, Σ = Sum, wᵢ = Weight i
+                        </p>
                     </div>
                     <p>Combines L1 and L2</p>
                 </div>
@@ -1209,6 +1314,9 @@
                     <p>Introduces skip connections to enable training of very deep networks.</p>
                     <div class="formula-box">
                         <code>y = F(x, {Wᵢ}) + x</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> y = Output, F(x, {Wᵢ}) = Residual function (learned mapping), x = Input (identity), Wᵢ = Weights of the layers, + = Element-wise addition (skip connection)
+                        </p>
                     </div>
                     <h4>Key Concepts:</h4>
                     <ul>
@@ -1305,6 +1413,9 @@
                     <p>Small perturbations to input that fool the model</p>
                     <div class="formula-box small">
                         <code>x' = x + ε · sign(∇ₓL(θ, x, y))</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> x' = Adversarial example, x = Original input, ε = Perturbation magnitude, sign = Sign function, ∇ₓL = Gradient of loss L w.r.t. input x, θ = Model parameters, y = True label
+                        </p>
                     </div>
                     <h4>Defense Strategies:</h4>
                     <ul>
@@ -1320,6 +1431,9 @@
                     <p>Continuous-depth models using ordinary differential equations.</p>
                     <div class="formula-box">
                         <code>dh(t)/dt = f(h(t), t, θ)</code>
+                        <p class="formula-explanation">
+                            <strong>Where:</strong> dh(t)/dt = Derivative of hidden state w.r.t. time t, f = Neural network function, h(t) = Hidden state at time t, t = Continuous time, θ = Parameters
+                        </p>
                     </div>
                     <h4>Advantages:</h4>
                     <ul>
