@@ -588,6 +588,8 @@ code {
     padding: var(--spacing-md);
     margin: var(--spacing-md) 0;
     border-radius: var(--radius-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .formula-box.small {
@@ -607,6 +609,8 @@ code {
     padding: var(--spacing-xs) 0;
     font-size: 1rem;
     color: var(--gray-100);
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 .section:not(.section-dark) .formula-box code {
@@ -617,10 +621,30 @@ code {
     font-size: 0.875rem;
     color: var(--gray-400);
     margin-top: var(--spacing-xs);
+    white-space: normal;
 }
 
 .section:not(.section-dark) .formula-explanation {
     color: var(--gray-600);
+}
+
+/* Custom scrollbar for formula boxes */
+.formula-box::-webkit-scrollbar {
+    height: 6px;
+}
+
+.formula-box::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.formula-box::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.formula-box::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
 }
 
 /* ===================================
@@ -1317,6 +1341,23 @@ code {
     .arrow {
         transform: rotate(90deg);
     }
+    
+    /* Better formula display on tablets */
+    .formula-box {
+        padding: var(--spacing-md);
+    }
+    
+    .formula-box code {
+        font-size: 0.9rem;
+    }
+    
+    /* Make cards stack better */
+    .activation-grid,
+    .loss-grid,
+    .optimizer-grid,
+    .hyperparameter-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1334,6 +1375,18 @@ code {
     
     .section-title {
         font-size: 1.75rem;
+    }
+    
+    .formula-box {
+        padding: var(--spacing-sm);
+    }
+    
+    .formula-box code {
+        font-size: 0.85rem;
+    }
+    
+    .topic-block {
+        padding: var(--spacing-md);
     }
 }
 
